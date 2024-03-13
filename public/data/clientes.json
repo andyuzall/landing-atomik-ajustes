@@ -1,0 +1,763 @@
+[
+  {
+    "id": 1,
+    "nombre": "Brick"
+    },
+    {
+    "id": 2,
+    "nombre": "Media Map"
+    },
+    {
+    "id": 3,
+    "nombre": "Pluton"
+    },
+    {
+    "id": 4,
+    "nombre": "Neo Ogilvy"
+    },
+    {
+    "id": 5,
+    "nombre": "Notable"
+    },
+    {
+    "id": 6,
+    "nombre": "OMD PR"
+    },
+    {
+    "id": 7,
+    "nombre": "GreenWebo"
+    },
+    {
+    "id": 8,
+    "nombre": "Juana"
+    },
+    {
+    "id": 9,
+    "nombre": "GO"
+    },
+    {
+      "id": 11,
+      "nombre": "Biedermann"
+      },
+      {
+      "id": 12,
+      "nombre": "Tomorrow"
+      },
+      {
+      "id": 13,
+      "nombre": "AB Comunicación"
+      },
+      {
+      "id": 14,
+      "nombre": "CPR"
+      },
+      {
+      "id": 15,
+      "nombre": "Texo"
+      },
+      {
+      "id": 16,
+      "nombre": "Garden"
+      },
+      {
+      "id": 17,
+      "nombre": "Starcom WW"
+      },
+      {
+      "id": 18,
+      "nombre": "Inverfin"
+      },
+      {
+      "id": 19,
+      "nombre": "Romina Luzardo"
+      },
+      {
+      "id": 20,
+      "nombre": "OMD PY"
+      },
+      {
+      "id": 21,
+      "nombre": "Mass Media"
+      },
+      {
+      "id": 22,
+      "nombre": "Kausa"
+      },
+      {
+      "id": 23,
+      "nombre": "Cautiva"
+      },
+      {
+      "id": 24,
+      "nombre": "Ignis"
+      },
+      {
+      "id": 25,
+      "nombre": "Madame Group"
+      },
+      {
+      "id": 26,
+      "nombre": "Control Pauta"
+      },
+      {
+      "id": 27,
+      "nombre": "La Media"
+      },
+      {
+      "id": 28,
+      "nombre": "Maruri Grey"
+      },
+      {
+      "id": 29,
+      "nombre": "Nasta"
+      },
+      {
+      "id": 30,
+      "nombre": "Lupe"
+      },
+      {
+      "id": 31,
+      "nombre": "Stereo"
+      },
+      {
+      "id": 32,
+      "nombre": "UFILMS"
+      },
+      {
+      "id": 33,
+      "nombre": "Publicidad Comercial"
+      },
+      {
+      "id": 34,
+      "nombre": "Dive"
+      },
+      {
+      "id": 35,
+      "nombre": "WildFi"
+      },
+      {
+      "id": 36,
+      "nombre": "Hearts & Science"
+      },
+      {
+      "id": 37,
+      "nombre": "Max"
+      },
+      {
+      "id": 38,
+      "nombre": "Nord"
+      },
+      {
+      "id": 39,
+      "nombre": "Rock And Roll"
+      },
+      {
+      "id": 40,
+      "nombre": "Ultra Créditos"
+      },
+      {
+      "id": 41,
+      "nombre": "PHD Network"
+      },
+      {
+      "id": 42,
+      "nombre": "Grupo Garnier"
+      },
+      {
+      "id": 43,
+      "nombre": "Thrive"
+      },
+      {
+      "id": 44,
+      "nombre": "Dots"
+      },
+      {
+      "id": 45,
+      "nombre": "Wavemaker"
+      },
+      {
+      "id": 46,
+      "nombre": "Media Office"
+      },
+      {
+      "id": 47,
+      "nombre": "Tienda Amiga"
+      },
+      {
+      "id": 48,
+      "nombre": "OMD Panamá"
+      },
+      {
+      "id": 49,
+      "nombre": "Noollab"
+      },
+      {
+      "id": 50,
+      "nombre": "StoryA"
+      },
+      {
+      "id": 51,
+      "nombre": "Ojo de Pez"
+      },
+      {
+      "id": 52,
+      "nombre": "Santiago Inmediato"
+      },
+      {
+      "id": 53,
+      "nombre": "XIY"
+      },
+      {
+      "id": 54,
+      "nombre": "Martel"
+      },
+      {
+      "id": 55,
+      "nombre": "Shopping Mariano"
+      },
+      {
+      "id": 56,
+      "nombre": "Human Value"
+      },
+      {
+      "id": 57,
+      "nombre": "Periferia"
+      },
+      {
+      "id": 58,
+      "nombre": "Univalle"
+      },
+      {
+      "id": 59,
+      "nombre": "Star5"
+      },
+      {
+      "id": 60,
+      "nombre": "Havas EC"
+      },
+      {
+      "id": 61,
+      "nombre": "Zenith"
+      },
+      {
+      "id": 62,
+      "nombre": "Madepa"
+      },
+      {
+      "id": 63,
+      "nombre": "Geox"
+      },
+      {
+      "id": 64,
+      "nombre": "Elevo Media"
+      },
+      {
+      "id": 65,
+      "nombre": "Pines Digitales"
+      },
+      {
+      "id": 66,
+      "nombre": "Digital Hub"
+      },
+      {
+      "id": 67,
+      "nombre": "Ariadna"
+      },
+      {
+      "id": 68,
+      "nombre": "Klap"
+      },
+      {
+      "id": 69,
+      "nombre": "Totto"
+      },
+      {
+      "id": 70,
+      "nombre": "Roger"
+      },
+      {
+      "id": 71,
+      "nombre": "Box Media"
+      },
+      {
+      "id": 72,
+      "nombre": "Fobo"
+      },
+      {
+      "id": 73,
+      "nombre": "Grupo Acsa"
+      },
+      {
+      "id": 74,
+      "nombre": "Omar Torres"
+      },
+      {
+      "id": 75,
+      "nombre": "Di María"
+      },
+      {
+      "id": 76,
+      "nombre": "Automotor"
+      },
+      {
+      "id": 77,
+      "nombre": "Cerro Music"
+      },
+      {
+      "id": 78,
+      "nombre": "Pontevedra"
+      },
+      {
+      "id": 79,
+      "nombre": "Havas"
+      },
+      {
+      "id": 80,
+      "nombre": "Agencia Tabarez"
+      },
+      {
+      "id": 81,
+      "nombre": "Banco GNB"
+      },
+      {
+      "id": 82,
+      "nombre": "Franz"
+      },
+      {
+      "id": 83,
+      "nombre": "LDM"
+      },
+      {
+      "id": 84,
+      "nombre": "Smid"
+      },
+      {
+      "id": 85,
+      "nombre": "Areté / Casa Rica"
+      },
+      {
+      "id": 86,
+      "nombre": "Max Analytics"
+      },
+      {
+      "id": 87,
+      "nombre": "UPSA"
+      },
+      {
+      "id": 89,
+      "nombre": "Tigo"
+      },
+      {
+      "id": 90,
+      "nombre": "Oniria"
+      },
+      {
+      "id": 91,
+      "nombre": "Publicis"
+      },
+      {
+      "id": 92,
+      "nombre": "Universidad Católica Boliviana"
+      },
+      {
+      "id": 93,
+      "nombre": "Agencia Insider"
+      },
+      {
+      "id": 94,
+      "nombre": "Codigo A"
+      },
+      {
+      "id": 95,
+      "nombre": "Arandú"
+      },
+      {
+      "id": 96,
+      "nombre": "Equair"
+      },
+      {
+      "id": 97,
+      "nombre": "Oppen Ion"
+      },
+      {
+      "id": 98,
+      "nombre": "Bagó"
+      },
+      {
+      "id": 99,
+      "nombre": "Porta"
+      },
+      {
+      "id": 100,
+      "nombre": "Paradais"
+      },
+      {
+      "id": 101,
+      "nombre": "P&P Medios"
+      },
+      {
+      "id": 102,
+      "nombre": "Koku"
+      },
+      {
+      "id": 103,
+      "nombre": "La Destilería Creativa"
+      },
+      {
+      "id": 104,
+      "nombre": "Hupi"
+      },
+      {
+      "id": 105,
+      "nombre": "Mindshare"
+      },
+      {
+      "id": 106,
+      "nombre": "Handy"
+      },
+      {
+      "id": 107,
+      "nombre": "Wavemaker EC"
+      },
+      {
+      "id": 108,
+      "nombre": "Ariadna PE"
+      },
+      {
+      "id": 109,
+      "nombre": "Strate 5 EC"
+      },
+      {
+      "id": 110,
+      "nombre": "Cultura Interactiva BO"
+      },
+      {
+      "id": 111,
+      "nombre": "Europ assistance CL"
+      },
+      {
+      "id": 112,
+      "nombre": "Cerebroo EC"
+      },
+      {
+      "id": 113,
+      "nombre": "Lettera EC"
+      },
+      {
+      "id": 114,
+      "nombre": "Sofopolis BO"
+      },
+      {
+      "id": 115,
+      "nombre": "OMD EC"
+      },
+      {
+      "id": 116,
+      "nombre": "Dentsu EC"
+      },
+      {
+      "id": 117,
+      "nombre": "Ariadna EC"
+      },
+      {
+      "id": 118,
+      "nombre": "MUV PY"
+      },
+      {
+      "id": 119,
+      "nombre": "Bluedoors CO"
+      },
+      {
+      "id": 120,
+      "nombre": "Highgrace CR"
+      },
+      {
+      "id": 121,
+      "nombre": "Amelia UY"
+      },
+      {
+      "id": 122,
+      "nombre": "NTP MX"
+      },
+      {
+      "id": 123,
+      "nombre": "Big Four BO"
+      },
+      {
+      "id": 124,
+      "nombre": "Optego BO"
+      },
+      {
+      "id": 125,
+      "nombre": "Gobierno Autónomo Municipal BO"
+      },
+      {
+      "id": 126,
+      "nombre": "OMD CO"
+      },
+      {
+      "id": 127,
+      "nombre": "Ariadna BO"
+      },
+      {
+      "id": 129,
+      "nombre": "Icónica BO"
+      },
+      {
+      "id": 130,
+      "nombre": "Highgrace RD"
+      },
+      {
+      "id": 131,
+      "nombre": "Dentsu RD"
+      },
+      {
+      "id": 132,
+      "nombre": "CC_San Diego CO"
+      },
+      {
+      "id": 133,
+      "nombre": "Turú PY"
+      },
+      {
+      "id": 134,
+      "nombre": "Prana PY"
+      },
+      {
+      "id": 135,
+      "nombre": "Agencia Cielito PY"
+      },
+      {
+      "id": 136,
+      "nombre": "PHD EC"
+      },
+      {
+      "id": 137,
+      "nombre": "Ludikom EC"
+      },
+      {
+      "id": 138,
+      "nombre": "Dos Pasos MX"
+      },
+      {
+      "id": 139,
+      "nombre": "El Pais UY"
+      },
+      {
+      "id": 140,
+      "nombre": "Fenomena Digital PA"
+      },
+      {
+      "id": 141,
+      "nombre": "Elements Adv EC"
+      },
+      {
+      "id": 142,
+      "nombre": "BBA EC"
+      },
+      {
+      "id": 143,
+      "nombre": "Pinky UY"
+      },
+      {
+      "id": 144,
+      "nombre": "Nacho CO"
+      },
+      {
+      "id": 145,
+      "nombre": "Gestion Publicidad EC"
+      },
+      {
+      "id": 146,
+      "nombre": "Metis PY"
+      },
+      {
+      "id": 147,
+      "nombre": "OMD CL"
+      },
+      {
+      "id": 148,
+      "nombre": "OMG CL"
+      },
+      {
+      "id": 149,
+      "nombre": "PHD CL"
+      },
+      {
+      "id": 150,
+      "nombre": "Havas CO"
+      },
+      {
+      "id": 151,
+      "nombre": "Cheil BO"
+      },
+      {
+      "id": 152,
+      "nombre": "Saúl Sanchez PY"
+      },
+      {
+      "id": 153,
+      "nombre": "Kinesso CH"
+      },
+      {
+      "id": 154,
+      "nombre": "Apap PY"
+      },
+      {
+      "id": 155,
+      "nombre": "Dentsu X CH"
+      },
+      {
+      "id": 156,
+      "nombre": "Ortega Landa BO"
+      },
+      {
+      "id": 157,
+      "nombre": "I-Group CH"
+      },
+      {
+      "id": 158,
+      "nombre": "Palmsbet PE"
+      },
+      {
+      "id": 159,
+      "nombre": "DK Management EC"
+      },
+      {
+      "id": 160,
+      "nombre": "OMG UY"
+      },
+      {
+      "id": 161,
+      "nombre": "Future media digital BO"
+      },
+      {
+      "id": 162,
+      "nombre": "Agencia Eco PY"
+      },
+      {
+      "id": 163,
+      "nombre": "Doing Ideas EC"
+      },
+      {
+      "id": 164,
+      "nombre": "NewDream UY"
+      },
+      {
+      "id": 165,
+      "nombre": "Nación Digital EC"
+      },
+      {
+      "id": 166,
+      "nombre": "Attach Media PE"
+      },
+      {
+      "id": 167,
+      "nombre": "Solcre SAS UY"
+      },
+      {
+      "id": 168,
+      "nombre": "G DIGITAL PY"
+      },
+      {
+      "id": 169,
+      "nombre": "Skiller SP"
+      },
+      {
+      "id": 170,
+      "nombre": "Banco de Machala EC"
+      },
+      {
+      "id": 171,
+      "nombre": "Altitude EC"
+      },
+      {
+      "id": 172,
+      "nombre": "Atlantico Shop CDE PY"
+      },
+      {
+      "id": 173,
+      "nombre": "OMD PA"
+      },
+      {
+      "id": 174,
+      "nombre": "ErreyErre HN"
+      },
+      {
+      "id": 175,
+      "nombre": "Pcomercial PA"
+      },
+      {
+      "id": 176,
+      "nombre": "Luxxbet HN"
+      },
+      {
+      "id": 177,
+      "nombre": "Ariadna CH"
+      },
+      {
+      "id": 178,
+      "nombre": "Grupo Creativo EC"
+      },
+      {
+      "id": 179,
+      "nombre": "Havas BO"
+      },
+      {
+      "id": 180,
+      "nombre": "Havas CR"
+      },
+      {
+      "id": 181,
+      "nombre": "Latin AD UY"
+      },
+      {
+      "id": 182,
+      "nombre": "FA Digital PY"
+      },
+      {
+      "id": 183,
+      "nombre": "Adbid CO"
+      },
+      {
+      "id": 184,
+      "nombre": "Upgrade Media BO"
+      },
+      {
+      "id": 185,
+      "nombre": "Iprospect CH"
+      },
+      {
+      "id": 186,
+      "nombre": "Caja Medica PY"
+      },
+      {
+      "id": 187,
+      "nombre": "Universidad San Carlos PY"
+      },
+      {
+      "id": 188,
+      "nombre": "Athos BO"
+      },
+      {
+      "id": 189,
+      "nombre": "Itacua Bienes Raices PY"
+      },
+      {
+      "id": 190,
+      "nombre": "Baker PY"
+      },
+      {
+      "id": 191,
+      "nombre": "Be Flamingo EC"
+      },
+      {
+      "id": 192,
+      "nombre": "Fabián Canosa PA"
+      },
+      {
+      "id": 193,
+      "nombre": "Craniux PY"
+      }
+  
+]

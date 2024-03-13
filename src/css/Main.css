@@ -1,0 +1,12 @@
+.main-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 550px;
+    width: 800px;
+    margin: 0;
+}
+
+.css-9aa3p4-MuiButtonBase-root-MuiButton-root{
+    width: 200px;
+}
