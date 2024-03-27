@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className='footer-box'>
         <p>
-            Desarrollado por Atomik © twentytwentythree
+            Desarrollado por Atomik © veintitrés
         </p>
     </div>
   )

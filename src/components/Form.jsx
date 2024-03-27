@@ -6,8 +6,6 @@ import { Button } from '@mui/material';
 
 const Form = ({ userData }) => {
 
-  console.log(userData);
-  const API_KEY = process.env.REACT_APP_DATA_BASE_URL;
   // Estado para almacenar el listado de clientes
   const [clientes, setClientes] = useState([]);
   const [selectedOption, setSelectedOption] = useState('');
@@ -49,50 +47,35 @@ const Form = ({ userData }) => {
     event.preventDefault();
 
     const sendDataToSheet = async () => {
-    try {
-      const response = await fetch(API_KEY, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          "fechaSolicitud": formData.fechaSolicitud,
-          "identificadorCampana": formData.identificadorCampana,
-          "cliente": formData.cliente,
-          "ajuste": formData.ajuste,
-          "numeroMultiplicar": formData.numeroMultiplicar,
-          "ajusteConsumo": formData.ajusteConsumo,
-          "observaciones": formData.observaciones
-        })
-      });
-
-      if (response.ok) {
-        setFormData({
-          fechaSolicitud: '',
-          identificadorCampana: '',
-          cliente: '',
-          ajuste: '',
-          numeroMultiplicar: '',
-          ajusteConsumo: '',
-          observaciones: ''
+      const formEle = document.querySelector("form");
+      const dataBase = new FormData(formEle);
+      fetch('https://script.google.com/macros/s/AKfycbxKTg6EjqLSSyXr3Xd9sPGyYZ-g3flHMfusjmr1gk0QbGLXVg_IfdYBD5ixCBmwok6Q/exec', {
+        method: "POST",
+        body: dataBase
+      }).then((res) => {
+        if (res.ok) {
+          setFormData({
+            fechaSolicitud: '',
+            identificadorCampana: '',
+            cliente: '',
+            ajuste: '',
+            numeroMultiplicar: '',
+            ajusteConsumo: '',
+            observaciones: ''
         });
-        setShowMessage(true);
-
-        setTimeout(() => {
-          setShowMessage(false);
-        }, 3000);
-      } else {
-        alert('Error al enviar los datos sin catch');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Error al enviar los datos');
+          setShowMessage(true); 
+          setTimeout(() => {
+            setShowMessage(false); 
+          }, 3000);
+        } else {
+          throw new Error('Error al enviar los datos');
+        }
+      }).catch((error) => {
+        console.log(error);
+      });
     }
-  };
-    console.log(formData)
     sendDataToSheet();
-  };
+}
 
 
   return (
@@ -105,6 +88,7 @@ const Form = ({ userData }) => {
           <input 
           type="date" 
           id='fechaSolicitud'
+          name='fechaSolicitud'
           className='input'
           value={formData.fechaSolicitud}
           onChange={handleInputChange}
@@ -114,6 +98,7 @@ const Form = ({ userData }) => {
           <p>Cliente</p>
           <select 
           id='cliente'
+          name='cliente'
           className='input'
           value={formData.cliente}
           onChange={handleInputChange}
@@ -128,6 +113,7 @@ const Form = ({ userData }) => {
           <p>¿Que deseo ajustar?</p>
           <select
           id='ajuste'
+          name='ajuste'
           className='input'
           value={formData.ajuste} 
           onChange={handleInputChange}
@@ -147,6 +133,7 @@ const Form = ({ userData }) => {
                 </p>
                 <input 
                 type="number"
+                name='numeroMultiplicar'
                 id='numeroMultiplicar'
                 className='input'
                 value={formData.numeroMultiplicar}
@@ -163,6 +150,7 @@ const Form = ({ userData }) => {
                 </p>
                 <input 
                 type='number'
+                name='ajusteConsumo'
                 id='ajusteConsumo'
                 className='input'
                 value={formData.ajusteConsumo}
@@ -180,6 +168,7 @@ const Form = ({ userData }) => {
                 </p>
               <input 
                 type="number"
+                name='numeroMultiplicar'
                 id='numeroMultiplicar'
                 className='input'
                 value={formData.numeroMultiplicar}
@@ -194,6 +183,7 @@ const Form = ({ userData }) => {
                 </p>
               <input 
                 type='number'
+                name='ajusteConsumo'
                 id='ajusteConsumo'
                 className='input'
                 value={formData.ajusteConsumo}
@@ -211,6 +201,7 @@ const Form = ({ userData }) => {
           </p>
           <input 
           type="text"
+          name='identificadorCampana'
           id='identificadorCampana'
           className='input'
           value={formData.identificadorCampana}
@@ -225,6 +216,7 @@ const Form = ({ userData }) => {
           </p>
           <textarea 
           className='observaciones'
+          name='observaciones'
           id='observaciones'
           value={formData.observaciones}
           onChange={handleInputChange}
