@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import style from '../css/Form.css';
 import Footer from './Footer';
 import SendIcon from '@mui/icons-material/Send';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 const Form = ({ userData }) => {
 
   // Estado para almacenar el listado de clientes
   const [clientes, setClientes] = useState([]);
   const [selectedOption, setSelectedOption] = useState('');
+  const [sending, setSending] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [formData, setFormData] = useState({
     fechaSolicitud: '',
     identificadorCampana: '',
@@ -18,9 +20,6 @@ const Form = ({ userData }) => {
     ajusteConsumo: '',
     observaciones: ''
   })
-
-   // Estado para mostrar el mensaje emergente
-   const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
     fetch('data/clientes.json')
@@ -43,17 +42,17 @@ const Form = ({ userData }) => {
     setSelectedOption(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const sendDataToSheet = async () => {
-      const formEle = document.querySelector("form");
-      const dataBase = new FormData(formEle);
-      fetch('https://script.google.com/macros/s/AKfycbxKTg6EjqLSSyXr3Xd9sPGyYZ-g3flHMfusjmr1gk0QbGLXVg_IfdYBD5ixCBmwok6Q/exec', {
-        method: "POST",
-        body: dataBase
-      }).then((res) => {
-        if (res.ok) {
+    setSending(true);
+      try {
+        const formEle = document.querySelector("form");
+        const dataBase = new FormData(formEle);
+        const res = await fetch('https://script.google.com/macros/s/AKfycbxKTg6EjqLSSyXr3Xd9sPGyYZ-g3flHMfusjmr1gk0QbGLXVg_IfdYBD5ixCBmwok6Q/exec', {
+          method: "POST",
+          body: dataBase
+        });
+        if(res.ok) {
           setFormData({
             fechaSolicitud: '',
             identificadorCampana: '',
@@ -63,28 +62,29 @@ const Form = ({ userData }) => {
             ajusteConsumo: '',
             observaciones: ''
         });
-          setShowMessage(true); 
+          setSuccess(true); 
           setTimeout(() => {
-            setShowMessage(false); 
+            setSuccess(false); 
           }, 3000);
         } else {
           throw new Error('Error al enviar los datos');
         }
-      }).catch((error) => {
+      } catch(error) {
         console.log(error);
-      });
-    }
-    sendDataToSheet();
+      };
+    setSending(false);
 }
 
 
   return (
     <div>
       <form onSubmit={handleSubmit} id='form' required>
-        <div className='divs-form'>
-          <p>
+        <label className='divs-form-date'>
+          <Typography
+          component='h6'
+          variant='h6'>
             Fecha de solicitud
-          </p>
+          </Typography>
           <input 
           type="date" 
           id='fechaSolicitud'
@@ -93,9 +93,8 @@ const Form = ({ userData }) => {
           value={formData.fechaSolicitud}
           onChange={handleInputChange}
           required />
-        </div>
+        </label>
         <div className='divs-form'>
-          <p>Cliente</p>
           <select 
           id='cliente'
           name='cliente'
@@ -110,7 +109,6 @@ const Form = ({ userData }) => {
           </select>
         </div>
         <div className='divs-form'>
-          <p>¿Que deseo ajustar?</p>
           <select
           id='ajuste'
           name='ajuste'
@@ -118,7 +116,7 @@ const Form = ({ userData }) => {
           value={formData.ajuste} 
           onChange={handleInputChange}
           required>
-            <option value=''>Seleccione el ajuste</option>
+            <option value=''>Seleccione el tipo de ajuste</option>
             <option value='Objetivo'>Objetivo</option>
             <option value='Consumo'>Consumo</option>
             <option value='Ambas'>Ambas</option>
@@ -128,9 +126,6 @@ const Form = ({ userData }) => {
           <>
             {selectedOption === 'Objetivo' && (
               <div className='divs-form'>
-                <p>
-                  Indicar el número a multiplicar
-                </p>
                 <input 
                 type="number"
                 name='numeroMultiplicar'
@@ -145,9 +140,6 @@ const Form = ({ userData }) => {
             )}
             {selectedOption === 'Consumo' && (
               <div className='divs-form'>
-                <p>
-                  Indicar el FM a ajustar
-                </p>
                 <input 
                 type='number'
                 name='ajusteConsumo'
@@ -163,9 +155,6 @@ const Form = ({ userData }) => {
             {selectedOption === 'Ambas' && (
               <>
               <div className='divs-form'>
-                <p>
-                Indicar el número a multiplicar
-                </p>
               <input 
                 type="number"
                 name='numeroMultiplicar'
@@ -178,9 +167,6 @@ const Form = ({ userData }) => {
               />
               </div>
               <div className='divs-form'>
-                <p>
-                Indicar el FM a ajustar
-                </p>
               <input 
                 type='number'
                 name='ajusteConsumo'
@@ -196,9 +182,6 @@ const Form = ({ userData }) => {
           </>
         )}
         <div className='divs-form'>
-          <p>
-            ¿Cual es el identificador de la campaña?
-          </p>
           <input 
           type="text"
           name='identificadorCampana'
@@ -211,13 +194,11 @@ const Form = ({ userData }) => {
           />
         </div>
         <div className='divs-form'>
-          <p>
-              Observaciones de cambio
-          </p>
           <textarea 
           className='observaciones'
           name='observaciones'
           id='observaciones'
+          placeholder='Descripción del cambio, fechas en las cual ajustar, detalles de interés.'
           value={formData.observaciones}
           onChange={handleInputChange}
           >
@@ -229,18 +210,19 @@ const Form = ({ userData }) => {
           color='secondary'
           size='large'
           fullWidth={false}
-          endIcon={<SendIcon />}
-          >Solicitar ajuste</Button>
-      </form>
-      {showMessage && ( 
+          endIcon={sending ? null : <SendIcon />}
+          disabled={sending}>
+          {sending ? 'Enviando ...' : 'Solicitar ajuste'}
+          </Button>
+      {success && ( 
         <div className='exito'>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
 					  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 					  <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
 				  </svg>
-          <p>¡Datos enviados correctamente!</p>
         </div>
        )}
+      </form>
     <Footer />
     </div>
   )
