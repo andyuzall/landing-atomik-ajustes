@@ -842,5 +842,25 @@
       {
       "id": 214,
       "nombre": "Feeling Design EC"
-      }
+      },
+      {
+        "id": 215,
+        "nombre": "Oncovida CL"
+      },
+      {
+        "id": 216,
+        "nombre": "Connaxis BO"
+      },
+      {
+        "id": 217,
+        "nombre": "Creatura Creativa EC"
+      },
+      {
+        "id": 218,
+        "nombre": "Upa PY"
+      },
+      {
+        "id": 219,
+        "nombre": "The Centria Group BO"
+      }     
 ]
