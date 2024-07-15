@@ -862,5 +862,33 @@
       {
         "id": 219,
         "nombre": "The Centria Group BO"
-      }     
+      },
+      {
+        "id": 220,
+        "nombre": "SmartBrands PE"
+      },
+      {
+        "id": 221,
+        "nombre": "Senete PY"
+      },
+      {
+        "id": 222,
+        "nombre": "Ogilvy SV"
+      },
+      {
+        "id": 223,
+        "nombre": "Central Shop PY"
+      },
+      {
+        "id": 224,
+        "nombre": "Atomica UY"
+      },
+      {
+        "id": 225,
+        "nombre": "OMD BO"
+      },
+      {
+        "id": 226,
+        "nombre": "PHD BO"
+      }
 ]
