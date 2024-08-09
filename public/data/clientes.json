@@ -890,5 +890,33 @@
       {
         "id": 226,
         "nombre": "PHD BO"
+      },
+      {
+        "id": 227,
+        "nombre": "Orange Attitude UY"
+      },
+      {
+        "id": 228,
+        "nombre": "Paxzu CL"
+      },
+      {
+        "id": 229,
+        "nombre": "Publicis CO"
+      },
+      {
+        "id": 230,
+        "nombre": "EPL Media UY"
+      },
+      {
+        "id": 231,
+        "nombre": "Gonzalez Giménez PY"
+      },
+      {
+        "id": 232,
+        "nombre": "Mullen Lowe EC"
+      },
+      {
+        "id": 233,
+        "nombre": "Widu PY"
       }
 ]
