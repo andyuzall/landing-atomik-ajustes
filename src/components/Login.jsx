@@ -34,7 +34,7 @@ const GoogleAuth = ({ setUserData } ) => {
      {loading ? (
         <div className="loader"></div>
       ) : (
-        loggedIn && <Navigate to='/main' />
+        loggedIn && <Navigate to='/form' />
       )}
     </div>
   )

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import style from '../css/Form.css';
 import Footer from './Footer';
+import Header from './Header.jsx';
 import SendIcon from '@mui/icons-material/Send';
 import { Button, Typography } from '@mui/material';
+import Select from 'react-select';
 
 const Form = ({ userData }) => {
 
@@ -12,7 +14,6 @@ const Form = ({ userData }) => {
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [formData, setFormData] = useState({
-    fechaSolicitud: '',
     identificadorCampana: '',
     cliente: '',
     ajuste: '',
@@ -22,11 +23,21 @@ const Form = ({ userData }) => {
   })
 
   useEffect(() => {
-    fetch('data/clientes.json')
-      .then(res => res.json())
-      .then(data => setClientes(data))
-      .catch(error => console.error('Error al cargar los clientes:', error));
+    fetchSheetDataClient();
   }, []);
+
+
+  // este fetch es para leer los clientes del sistema
+  const fetchSheetDataClient = async () => {
+    const API_KEY = process.env.REACT_APP_GOOGLE_SCRIPT_URL
+    try {
+      const respuesta = await fetch(API_KEY);
+      const dataClients = await respuesta.json();
+      setClientes(dataClients.map(item => ({ value: item[0], label: item[0] })));
+    } catch (error) {
+      console.error('Error en el fetching de datos:', error)
+    }
+  }
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
@@ -34,13 +45,19 @@ const Form = ({ userData }) => {
     if (id === 'ajuste') {
       setSelectedOption(value);
     }
-
   }
+
+  
 
   // manejamos el cambio en el segundo select
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
+
+  const handleSelectChangeClientes = (selectedOption) => {
+    const value = selectedOption ? selectedOption.value : '';
+    setFormData({ ...formData, cliente: value });
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -48,13 +65,16 @@ const Form = ({ userData }) => {
       try {
         const formEle = document.querySelector("form");
         const dataBase = new FormData(formEle);
+
+        const currentDate = new Date();
+        dataBase.append('fechaSolicitud', currentDate.toISOString());
+
         const res = await fetch('https://script.google.com/macros/s/AKfycbxKTg6EjqLSSyXr3Xd9sPGyYZ-g3flHMfusjmr1gk0QbGLXVg_IfdYBD5ixCBmwok6Q/exec', {
           method: "POST",
           body: dataBase
         });
         if(res.ok) {
           setFormData({
-            fechaSolicitud: '',
             identificadorCampana: '',
             cliente: '',
             ajuste: '',
@@ -75,38 +95,27 @@ const Form = ({ userData }) => {
     setSending(false);
 }
 
+const selectedValue = clientes.find(client => client.value === formData.cliente);
+
+
+
 
   return (
     <div>
+      <Header  userData={userData}/>
       <form onSubmit={handleSubmit} id='form' required>
-        <label className='divs-form-date'>
-          <Typography
-          component='h6'
-          variant='h6'>
-            Fecha de solicitud
-          </Typography>
-          <input 
-          type="date" 
-          id='fechaSolicitud'
-          name='fechaSolicitud'
-          className='input'
-          value={formData.fechaSolicitud}
-          onChange={handleInputChange}
-          required />
-        </label>
         <div className='divs-form'>
-          <select 
+          <Select
           id='cliente'
           name='cliente'
           className='input'
-          value={formData.cliente}
-          onChange={handleInputChange}
-          required>
-            <option value="">Seleccione el cliente</option>
-            {clientes.map(cliente => (
-              <option key={cliente.id} value={cliente.nombre}>{cliente.nombre}</option>
-            ))}
-          </select>
+          classNamePrefix='input'
+          onChange={handleSelectChangeClientes}
+          value={selectedValue}
+          options={clientes}
+          placeholder='Seleccione el cliente'
+          isClearable
+          />
         </div>
         <div className='divs-form'>
           <select
